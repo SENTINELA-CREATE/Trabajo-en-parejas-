@@ -3,6 +3,7 @@ package com.example.trabajo_evaluativo.dto;
 import jakarta.persistence.Entity;
 import lombok.*;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

@@ -2,7 +2,7 @@ package com.example.trabajo_evaluativo.dto;
 
 import lombok.*;
 import java.time.LocalDateTime;
-
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
