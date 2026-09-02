@@ -44,4 +44,4 @@ public class ProductController {
         productService.deleteById(id);
         return ResponseEntity.ok("Product eliminado correctamente");
     }
-
+}
