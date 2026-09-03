@@ -76,4 +76,16 @@ public class ProductService {
                 .creationDate(product.getCreationDate())
                 .build();
     }
+
+    public List<ProductOutputDTO> findByCategory(String category) {
+        return productRepository.findByCategory(category).stream()
+                .map(this::mapToOutputDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<ProductOutputDTO> findByName(String name) {
+        return productRepository.findByNameContainingIgnoreCase(name).stream()
+                .map(this::mapToOutputDTO)
+                .collect(Collectors.toList());
+    }
 }

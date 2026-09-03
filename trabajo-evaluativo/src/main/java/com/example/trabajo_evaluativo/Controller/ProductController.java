@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
+@RequestMapping("/api/products")
 public class ProductController {
     private final ProductService productService;
 
@@ -43,5 +43,14 @@ public class ProductController {
     public ResponseEntity<String> deleteProduct(@PathVariable Long id) {
         productService.deleteById(id);
         return ResponseEntity.ok("Product eliminado correctamente");
+    }
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<ProductOutputDTO>> getProductsByCategory(@PathVariable String category) {
+        return ResponseEntity.ok(productService.findByCategory(category));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ProductOutputDTO>> searchProductsByName(@RequestParam String name) {
+        return ResponseEntity.ok(productService.findByName(name));
     }
 }
